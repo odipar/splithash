@@ -74,6 +74,15 @@ public final class TempBinNode<X> extends SHNode<X> {
     }
     
     @Override
+    public boolean equalTo(SHNode<X> other) {
+        if (this == other) return true;
+        if (other instanceof TempBinNode<X> o) {
+            return o.leftNode.equalTo(leftNode) && o.rightNode.equalTo(rightNode);
+        }
+        return false;
+    }
+    
+    @Override
     public int hashAt(int i) {
         throw error();
     }

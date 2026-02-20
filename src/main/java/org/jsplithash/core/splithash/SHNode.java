@@ -40,9 +40,7 @@ public abstract sealed class SHNode<X> implements Hashable, Hash
      * Equality check based on content equality, rather than structure equality.
      * Used to detect node repetitions.
      */
-    public boolean equalTo(SHNode<X> other) {
-        return this == other;
-    }
+    public abstract boolean equalTo(SHNode<X> other);
     
     /**
      * Helper to get the base node (unwrapping RLE if needed).
