@@ -82,15 +82,7 @@ public final class ChunkedNode<X> extends SHNode<X> {
     
     @Override
     public SHNode<X> right() {
-        SHNode<X> unc = getUnchunked();
-        if (unc == null) {
-            throw new RuntimeException("ChunkedNode.getUnchunked() returned null");
-        }
-        SHNode<X> r = unc.right();
-        if (r == null) {
-            throw new RuntimeException("ChunkedNode unchunked to " + unc.getClass().getSimpleName() + " but right() is null, unc.height=" + unc.height());
-        }
-        return r;
+        return getUnchunked().right();
     }
     
     @Override
@@ -147,14 +139,5 @@ public final class ChunkedNode<X> extends SHNode<X> {
         }
         // For non-ChunkedNode, compare via unchunked tree
         return left().equalTo(other.left()) && right().equalTo(other.right());
-    }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (!(obj instanceof ChunkedNode<?> other)) return false;
-        @SuppressWarnings("unchecked")
-        ChunkedNode<X> typedOther = (ChunkedNode<X>) other;
-        return equalTo(typedOther);
     }
 }

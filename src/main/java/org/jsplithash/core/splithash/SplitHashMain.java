@@ -139,9 +139,6 @@ public class SplitHashMain {
     }
     
     private static <X> boolean nodesEqual(SHNode<X> a, SHNode<X> b) {
-        if (a == b) return true;
-        if (a == null || b == null) return false;
-        // Structural equality like Scala's == for case classes
-        return a.hashCode() == b.hashCode() && a.size() == b.size() && a.equalTo(b);
+       return  a.equalTo(b);
     }
 }
