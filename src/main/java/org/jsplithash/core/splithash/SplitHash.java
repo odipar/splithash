@@ -12,8 +12,8 @@ import static org.jsplithash.core.splithash.Hashing.*;
  * It is based on a novel hashing scheme that was first introduced with SeqHash.
  * (See http://www.bu.edu/hic/files/2015/01/versum-ccs14.pdf).
  * 
- * Like SeqHashes, SplitHashes can be concatenated in O(log(n)).
- * But SplitHash extends SeqHash by allowing Hashes to also be split in O(log(n)).
+ * Like SeqHashes, SplitHashes can be concatenated in O(log(n)^2).
+ * But SplitHash extends SeqHash by allowing Hashes to also be split in O(log(n)^2).
  * It also solves SeqHash's issue with repeating nodes by applying RLE (Run Length Encoding) compression.
  * To improve cache coherence and memory bandwidth, SplitHashes can be optionally chunked into n-ary trees.
  * 
