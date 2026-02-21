@@ -156,7 +156,7 @@ The merge algorithm used during concatenation is directly derived from SeqHash: 
 
 ## References
 
-- **Versum / SeqHash**: Van Dalen, R. et al. *"VeriSync: Verifiable, Highly Concurrent Data Structures for the Untrusted Cloud"*. CCS 2014.  
+- **Versum / SeqHash**: van den Hooff, M. F. Kaashoek, and N. Zeldovich, “VerSum: Verifiable computations over large public logs,” in Proc. 2014 ACM SIGSAC Conf. Comput. Commun. Secur., 2014, pp. 1304–1316.. 
   Paper: <http://www.bu.edu/hic/files/2015/01/versum-ccs14.pdf>  
   SeqHash introduces the hash-based merge algorithm that SplitHash builds upon.
 
